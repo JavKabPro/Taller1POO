@@ -34,7 +34,7 @@ public Time()               //Constructor Method
         get => _hour;   //I want properties to be linked to attributes.
         set             //... and I want that the privates attributes have relation with
         {               //publics properties...
-            _hour = ValidateHour(value);
+            _hour = ValidHour(value);
             }
     }
     public int Minute   
@@ -42,7 +42,7 @@ public Time()               //Constructor Method
         get => _minute; //Replaced with arrow notation
         set
         {
-            _minute =ValidateMinute(value);
+            _minute =ValidMinute(value);
         }
     }
     public int Second
@@ -50,7 +50,7 @@ public Time()               //Constructor Method
         get => _second;
         set
         {
-            _second = ValidateSecond(value);
+            _second = ValidSecond(value);
         }
     }
     public int Millisecond
@@ -58,7 +58,7 @@ public Time()               //Constructor Method
         get => _millisecond;
         set
         {
-            _millisecond = ValidateMillisecond(value);
+            _millisecond = ValidMillisecond(value);
         }
     }                               //End of properties
                                     //
@@ -102,7 +102,7 @@ public Time()               //Constructor Method
         string period = Hour < 12 ? "AM" : "PM";                            //Determine if it is AM or PM.
         return $"{displayHour:00}:{Minute:00}:{Second:00}.{Millisecond:000} {period}";
     }
-    private int ValidateHour(int hour)
+    private int ValidHour(int hour)
     {
         if (hour < 0 || hour > 23)
         {
@@ -110,7 +110,7 @@ public Time()               //Constructor Method
         }
         return hour;
     }
-    private int ValidateMinute(int minute)
+    private int ValidMinute(int minute)
     {
         if (minute < 0 || minute > 59)
         {
@@ -118,7 +118,7 @@ public Time()               //Constructor Method
         }
         return minute;
     }
-    private int ValidateSecond(int second)
+    private int ValidSecond(int second)
     {
         if (second < 0 || second > 59)
         {
@@ -126,7 +126,7 @@ public Time()               //Constructor Method
         }
         return second;
     }
-    private int ValidateMillisecond(int millisecond)
+    private int ValidMillisecond(int millisecond)
     {
         if (millisecond < 0 || millisecond > 999)
         {
