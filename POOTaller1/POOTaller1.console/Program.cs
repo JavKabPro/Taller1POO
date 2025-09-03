@@ -11,7 +11,7 @@ try
 
     foreach (Time time in times)
     {
-        Console.WriteLine($"Time {time}");
+        Console.WriteLine($"Time: {time}");
         Console.WriteLine($"\tMilliseconds:  {time.ToMilliseconds(),15:N0}");
         Console.WriteLine($"\tSeconds     :  {time.ToSeconds(),15:N0}");
         Console.WriteLine($"\tMinutes     :  {time.ToMinutes(),15:N0}");
