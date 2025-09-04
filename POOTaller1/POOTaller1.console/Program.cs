@@ -19,7 +19,7 @@ try
         Console.WriteLine($"\tIs Other Day:  {time.IsOtherDay(t4)}");
         Console.WriteLine();
     }
-    var t6 = new Time(45, -7, 90, -87);
+    var t6 = new Time(4, 7, 40, -87);
 }
     catch (Exception exception)
     {

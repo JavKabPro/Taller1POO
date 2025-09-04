@@ -79,10 +79,10 @@ public Time()               //Constructor Method
     public Time Add(Time other)                         //
     {
         long totalMilliseconds = ToMilliseconds() + other.ToMilliseconds(); //Converts both Time objects to absolute milliseconds.
-        int newHour = (int)((totalMilliseconds / 3600000) % 24);            //Number of milliseconds in an hour. Within the range [0–23].
-        int newMinute = (int)((totalMilliseconds / 60000) % 60);            //Number of milliseconds in a minute. Within the range [0–59].
-        int newSecond = (int)((totalMilliseconds / 1000) % 60);             //Number of milliseconds in a second. Within the range [0–59].
-        int newMillisecond = (int)(totalMilliseconds % 1000);               //Number of milliseconds. Within the range [0–999].
+        int newHour = (int)((totalMilliseconds / 3600000) % 24);            //Calculating the new hour from the total milliseconds
+        int newMinute = (int)((totalMilliseconds / 60000) % 60);            //The minutes are calculated on this line.
+        int newSecond = (int)((totalMilliseconds / 1000) % 60);             //In this part the seconds are obtained.
+        int newMillisecond = (int)(totalMilliseconds % 1000);               //Finally, we calculate the remaining milliseconds.
 
         return new Time(newHour, newMinute, newSecond, newMillisecond);     //New object Tme.
     }
@@ -97,7 +97,7 @@ public Time()               //Constructor Method
         {                                                                   //Because 12:00:00.000 AM is not correct way, according to the teacher
             return "00:00:00.000 AM";
         }
-        int displayHour = Hour % 12;                                        //Convert hour from 24-hour format to 12-hour format.
+        int displayHour = Hour % 12;                                        //Convert hour from 24hours format to 12hours format.
         if (displayHour == 0) displayHour = 12;                             //If hour is 0, set it to 12.
         string period = Hour < 12 ? "AM" : "PM";                            //Determine if it is AM or PM.
         return $"{displayHour:00}:{Minute:00}:{Second:00}.{Millisecond:000} {period}";
